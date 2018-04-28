@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -23,6 +24,13 @@ public class ApplicationTests {
 		HelloProperties properties = this.context.getBean(HelloProperties.class);
 		List<String> foo = properties.getFoo();
 		assertThat(foo).containsExactly("c");
+	}
+
+	@Test
+	public void yamlListMappedToSet() {
+		HelloProperties properties = this.context.getBean(HelloProperties.class);
+		Set<String> bar = properties.getBar();
+		assertThat(bar).containsExactly("cat", "dog", "bird");
 	}
 
 }

@@ -1,2 +1,5 @@
-hello.foo:
-- c
+hello.foo: c
+hello.bar:
+- cat
+- dog
+- bird
